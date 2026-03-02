@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  
+  --color-paper: #FDFDFD;
+  --color-ink: #121212;
+  --color-morandi-50: #fafafa;
+  --color-morandi-100: #f4f4f5;
+  --color-morandi-200: #e4e4e7;
+  --color-morandi-300: #d4d4d8;
+  --color-morandi-400: #a1a1aa;
+  --color-morandi-500: #71717a;
+  --color-morandi-600: #52525b;
+  --color-morandi-700: #3f3f46;
+  --color-morandi-800: #27272a;
+  --color-morandi-900: #18181b;
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/80 dark:bg-black/60 backdrop-blur-xl border border-black/5 dark:border-white/10;
+  }
+}
+
+body {
+  @apply bg-paper text-ink dark:bg-ink dark:text-paper antialiased transition-colors duration-300;
+}
